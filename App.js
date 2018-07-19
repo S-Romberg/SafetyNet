@@ -1,29 +1,39 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Scene, Stack, Router, Actions } from 'react-native-router-flux'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
-import HomeScreen from './components/HomeScreen.js'
-import Login from './components/Login'
-import LandingScreenUser from './components/LandingScreenUser'
+import HomeScreen from './screens/HomeScreen.js'
+import Login from './screens/Login'
+import Breathe from './screens/user/Breathe'
+import Smile from './screens/user/Smile'
+import SLandingScreen from './screens/safetyNet/LandingScreen'
 
 
+ export default class App extends React.Component {
+  static navigationOptions = {
+    header: null,
+  };
 
-export default class App extends React.Component {
   render() {
     return (
-        <Router>
-          <Stack key="root">
-            {/* <Scene key="login" component={Login} title="Login"/>
-            <Scene key="register" component={Register} title="Register"/> */}
-            <Scene key="home" component={HomeScreen}/>
-            <Scene key='user' component={Login} />
-            <Scene key='support' component={Login} />
-            <Scene key='loggedIn' component={LandingScreenUser} type={Actions.REPLACE} />
-          </Stack>
-        </Router>
+        <AppNavigator />
     );
   }
 }
+
+const AppNavigator = createStackNavigator({
+  Home: HomeScreen ,
+  Login: Login ,
+  Breathe: Breathe,
+  SLanding: SLandingScreen,
+  Smile: Smile
+},
+{
+  initialRouteName: 'Home',
+}
+)
+
+
 
 const styles = StyleSheet.create({
   container: {

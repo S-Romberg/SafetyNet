@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Image,
   Platform,
@@ -8,17 +8,24 @@ import {
   TouchableOpacity,
   View,
   Button
-} from 'react-native';
-import { WebBrowser } from 'expo';
-import { Actions } from 'react-native-router-flux'
-// import { MonoText } from '../components/StyledText';
-
+} from 'react-native'
+import { WebBrowser } from 'expo'
+import { createStackNavigator } from 'react-navigation'
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
-    // navigation: null
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        name: '',
+        email: '',
+        password: '',
+        safetyNet: true
+    };
+}
 
   render() {
     return (
@@ -31,13 +38,17 @@ export default class HomeScreen extends React.Component {
             />
           </View>
           <TouchableOpacity 
-            onPress={()=>Actions.user()}
+            onPress={() => this.props.navigation.navigate('Login', {
+              safetyNet: true
+            })}
             style={styles.button}
             color='white'>
              <Text style={styles.buttonText}>I need a safety net</Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={()=>Actions.support()}
+            onPress={() => this.props.navigation.navigate('Login', {
+              safetyNet: false
+            })}
             style={styles.button} 
             color='white'>
             <Text style={styles.buttonText}>I want to be a safety net</Text>
