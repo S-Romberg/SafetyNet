@@ -5,16 +5,15 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
-  Button,
   keyboardType
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 import { createStackNavigator } from 'react-navigation';
+import {  Content, Button, Icon } from 'native-base';
 
-export default class Login extends React.Component {
+export default class Signup extends React.Component {
 
     constructor(props) {
         super(props);
@@ -34,12 +33,10 @@ export default class Login extends React.Component {
     console.log()
   }
   render() {
+    var landing = ''
     const { navigation } = this.props;
-    const otherParam = navigation.getParam('safetyNet', 'undefined');
-    const safety = JSON.stringify(otherParam)
+    const safety = navigation.getParam('safetyNet', 'undefined');
     console.log(safety)
-    if(safety === false){var landing = 'Breathe'} else {var landing = 'SLanding'}
-    console.log(landing)
     return (
       <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.container} >
@@ -51,13 +48,6 @@ export default class Login extends React.Component {
           </View>
           <View style={styles.form}>
             <FormLabel 
-                labelStyle={styles.text}>Name</FormLabel>
-            <FormInput 
-                ref={(el) => { this.name = el }}
-                containerStyle={styles.input} 
-                onChangeText={(name) => this.setState({name})}
-                value={this.state.name}/>
-            <FormLabel 
                 labelStyle={styles.text}>Email</FormLabel>
             <FormInput 
                 ref={(el) => { this.email = el }}
@@ -68,32 +58,28 @@ export default class Login extends React.Component {
             <FormLabel 
                 labelStyle={styles.text}>Password</FormLabel>
             <FormInput 
+                secureTextEntry={true}
                 ref={(el) => { this.password = el }}
                 containerStyle={styles.input} 
                 onChangeText={(password) => this.setState({password})}
                 value={this.state.password}/>
             <FormValidationMessage></FormValidationMessage>
-            <View style={styles.buttons}>
-             {safety ? 
-             <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Breathe')}
-                style={styles.button}
-                color="white">
-                <Text style={styles.buttonText} >Sign up!</Text>
-              </TouchableOpacity> :
-              <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('SLanding')}
-                style={styles.button}
-                color="white">
-                <Text style={styles.buttonText} >Sign up!</Text>
-              </TouchableOpacity>}
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => this.props.navigation.goBack()}> 
-                <Text style={styles.buttonText} >Go back</Text>
-              </TouchableOpacity>
             </View>
-          </View>
+            <View contentContainerStyle={styles.buttons}>
+             {safety ? 
+              <Button  
+                  onPress={() => this.props.navigation.navigate('Breathe')}
+                  style={styles.button}
+                  color="white">
+                <Text style={styles.buttonText}>Login</Text> 
+                </Button> :
+                <Button  
+                  onPress={() => this.props.navigation.navigate('Resources')}
+                  style={styles.button}
+                  color="white">
+                <Text style={styles.buttonText}>Login</Text> 
+                </Button>}
+            </View>
         </ScrollView>
       </View>
     );
@@ -102,6 +88,7 @@ export default class Login extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%',
     flex: 1,
     backgroundColor: '#B6D0DD',
     alignItems: 'center',
@@ -109,24 +96,27 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 350, 
-    height: 90,
+    height: 95,
   },
   buttons:{
-    width: '100%',
-    justifyContent:'center',
-    alignItems: 'center'
+    marginTop: 25,
+  },
+  already:{
+    fontSize: 14,
+    color: 'white',
+    marginTop: 10,
+    marginBottom: 5
   },
   button: {
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: 'white',
-    marginTop: 30,
+    padding: 10,
     borderRadius: 10,
-    width: 75,
-    height: 30
+    margin: 10
   },
-  buttonText:{
-    color: '#B6D0DD'
+  buttonText: {
+    color: '#B6D0DD',
+    fontSize: 17
   },
   form:{
       width: 350,
@@ -134,9 +124,8 @@ const styles = StyleSheet.create({
   },
   input:{
       borderBottomColor: "white",
-
   },
   text:{
-      color: "white"
+    color: "white"
   }
 });

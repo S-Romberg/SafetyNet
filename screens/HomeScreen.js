@@ -38,7 +38,7 @@ export default class HomeScreen extends React.Component {
             />
           </View>
           <TouchableOpacity 
-            onPress={() => this.props.navigation.navigate('Login', {
+            onPress={() => this.props.navigation.navigate('Signup', {
               safetyNet: true
             })}
             style={styles.button}
@@ -46,7 +46,7 @@ export default class HomeScreen extends React.Component {
              <Text style={styles.buttonText}>I need a safety net</Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={() => this.props.navigation.navigate('Login', {
+            onPress={() => this.props.navigation.navigate('Signup', {
               safetyNet: false
             })}
             style={styles.button} 
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   buttonText: {
-    color: '#B6D0DD',
+    color: 'rgb(135, 171, 188)',
     fontSize: 17
   }
 });

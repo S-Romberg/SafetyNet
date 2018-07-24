@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { createStackNavigator} from 'react-navigation'
-import { Container, Header, Content, Button, Icon, Text } from 'native-base';
+import { Container, Header, Content, Button, Icon, Text, List, ListItem, Left, Body, Right, Thumbnail } from 'native-base';
+import { AppConsumer } from '../context/AppContext'
 
 
 
@@ -11,29 +12,31 @@ export default class Chat extends React.Component {
     return (
       <Container contentContainerStyle={styles.container}>
         <Content style={styles.background}>
-            <Text>Hey talk to me</Text>
+          <List>
+            <AppConsumer>
+              {(context) => {
+                return context.state.users.map(user => {
+                  return (
+                    <ListItem onPress={() => this.props.navigation.navigate('Messages', {
+                      name: user.name,
+                      profile: user.profile
+                    })} style={styles.listItem} key={user.id} avatar>
+                      <Left>
+                        <Thumbnail source={{ uri: user.profile }} />
+                      </Left>
+                      <Body>
+                        <Text>{user.name}</Text>
+                        <Text note>I dunno man youll probably have some old messages or somethin</Text>
+                      </Body>
+                      <Right>
+                        <Text note>12:00pm</Text>
+                      </Right>
+                    </ListItem>
+                )})
+              }}
+            </AppConsumer>
+          </List>
         </Content>
-        {/* <Footer>
-          <FooterTab>
-            <Button vertical active>
-              <Icon ios='ios-cloud' android='md-cloud'/>
-              <Text>Breathe</Text>
-            </Button>
-            <Button vertical 
-              onPress={() => this.props.navigation.push('Smile')}>
-              <Icon ios='ios-happy-outline' android='md-happy'/>
-              <Text>Smile</Text>
-            </Button>
-            <Button vertical>
-              <Icon active ios='ios-chatboxes' android='md-chatboxes'/>
-              <Text>Chat</Text>
-            </Button>
-            <Button vertical>
-              <Icon name="person" />
-              <Text>Profile</Text>
-            </Button>
-          </FooterTab>
-        </Footer> */}
       </Container>
     );
   }
@@ -43,12 +46,12 @@ export default class Chat extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgb(218,218,218)',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
   background:{
-    backgroundColor:'rgb(218,218,218)',
+    backgroundColor:'white',
     width: '100%'
   }
 });

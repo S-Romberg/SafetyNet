@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import { AppProvider } from './context/AppContext'
 
 import HomeScreen from './screens/HomeScreen.js'
+import Signup from './screens/Signup'
+import Breathe from './userscreens/Breathe'
+import Think from './userscreens/Think'
+import Resources from './safetyscreens/Resources'
 import Login from './screens/Login'
-import Breathe from './screens/user/Breathe'
-import Smile from './screens/user/Smile'
-import SLandingScreen from './screens/safetyNet/LandingScreen'
+import Messages from './screens/Messages'
 
 
  export default class App extends React.Component {
@@ -16,17 +19,21 @@ import SLandingScreen from './screens/safetyNet/LandingScreen'
 
   render() {
     return (
+      <AppProvider>
         <AppNavigator />
+      </AppProvider>
     );
   }
 }
 
 const AppNavigator = createStackNavigator({
   Home: HomeScreen ,
-  Login: Login ,
+  Signup: Signup ,
   Breathe: Breathe,
-  SLanding: SLandingScreen,
-  Smile: Smile
+  Resources: Resources,
+  Think: Think,
+  Login: Login,
+  Messages: Messages
 },
 {
   initialRouteName: 'Home',

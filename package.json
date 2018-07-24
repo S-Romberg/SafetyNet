@@ -2,13 +2,16 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
+    "@pusher/chatkit": "^0.7.16",
     "eslint": "^5.1.0",
     "expo": "^28.0.0",
     "native-base": "^2.7.2",
-    "react": "^16.4.1",
-    "react-native": "^0.55.4",
+    "react": "16.4.1",
+    "react-native": "^0.55.0",
     "react-native-elements": "^0.19.1",
-    "react-navigation": "^2.7.0"
+    "react-native-gifted-chat": "0.2",
+    "react-navigation": "^2.7.0",
+    "socket.io": "^2.1.1"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.0.0-beta.54"

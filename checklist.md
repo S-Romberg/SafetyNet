@@ -11,16 +11,16 @@ friend table with id, user1id, user2id
         //   <Stack key="root">
 
         //     <Scene key="home" component={HomeScreen}/>
-        //     <Scene key='user' component={Login} />
-        //     <Scene key='support' component={Login} />
-        //     {/* <Scene key='loggedIn' component={LandingScreenUser} type={Actions.REPLACE} /> */}
+        //     <Scene key='user' component={Signup} />
+        //     <Scene key='support' component={Signup} />
+        //     {/* <Scene key='loggedIn' component={ResourcesUser} type={Actions.REPLACE} /> */}
         //     <Scene  hideNavBar key='root'>
         //     <Scene key='tab-bar' tabBarStyle={{backgroundColor: "black"}} tabs={true}>
         //       <Scene key='tab-one' icon={TabIcon}>
-        //         <Scene key='loggedIn' title='yay!' component={LandingScreenUser} type={Actions.REPLACE} icon={TabIcon}></Scene>
+        //         <Scene key='loggedIn' title='yay!' component={ResourcesUser} type={Actions.REPLACE} icon={TabIcon}></Scene>
         //       </Scene>
         //       <Scene key='tab-two' title='more' icon={TabIcon}>
-        //         <Scene key='loggedIn' title='logged in' component={LandingScreenUser} type={Actions.REPLACE} ></Scene>
+        //         <Scene key='loggedIn' title='logged in' component={ResourcesUser} type={Actions.REPLACE} ></Scene>
         //       </Scene>
         //     </Scene>
         //     </Scene>
