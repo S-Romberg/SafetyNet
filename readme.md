@@ -1,5 +1,5 @@
 # SafetyNet
-
+### In progress! More updates on 7/27
 
 One of the hardest parts of having mental health issues is having to ask for help. Millions of people suffer silently every year because they don't want to burden the people around them. My solution to this is SafetyNet. An app that enables users to ask for help if they need it -- or if they're unable to, the app will regularly prompt their SafetyNet of people to check up on them. If they feel uncomfortable asking their friends or family for help, it will connect them to a network of volunteers that match with them via a simple questionnaire. 
 
