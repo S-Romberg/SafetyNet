@@ -9,7 +9,6 @@ fork and clone repo
 
 from the terminal:
 ```
-
 $npm i
 
 $exp start
@@ -44,6 +43,8 @@ SafetyNet will give people access to a support network if they do not have one, 
 React Native, Expo, React Navigation, ChatKit, Native Base, CSS, Bcrypt/Hash, Express, Knex, PostgreSQL
 
 ### Created by Spencer Romberg
+
 [spenceromberg.co](https://spenceromberg.co/)
+
 [LinkedIn](https://www.linkedin.com/in/spencer-romberg/)
 
