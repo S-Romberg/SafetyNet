@@ -8,13 +8,14 @@ One of the hardest parts of having mental health issues is having to ask for hel
 fork and clone repo
 
 from the terminal:
+```
 
 $npm i
 
 $exp start
 
 $exp ios
-
+```
 
 ## SafetyNet User Interface 
 ### Being a safety net
