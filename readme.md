@@ -40,7 +40,33 @@ SafetyNet will give people access to a support network if they do not have one, 
 
 ## Technology
 
-React Native, Expo, React Navigation, ChatKit, Native Base, CSS, Bcrypt/Hash, Express, Knex, PostgreSQL
+### Front End
+
+React Native 
+
+Expo
+
+React Navigation
+
+ChatKit
+
+Context API
+
+### Style
+
+Native Base
+
+CSS
+
+### Back End
+
+Bcrypt/Hash
+
+Express
+
+Knex
+
+PostgreSQL
 
 ### Created by Spencer Romberg
 
