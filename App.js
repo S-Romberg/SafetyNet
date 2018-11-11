@@ -5,7 +5,7 @@ import { AppProvider } from './context/AppContext'
 
 import HomeScreen from './screens/HomeScreen.js'
 import Signup from './screens/Signup'
-import Breathe from './userscreens/Breathe'
+import Breathe from './userscreens/Breathe.js'
 import Think from './userscreens/Think'
 import Resources from './safetyscreens/Resources'
 import Login from './screens/Login'

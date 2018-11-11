@@ -19,17 +19,17 @@ export default class Chat extends React.Component {
                   return (
                     <ListItem onPress={() => this.props.navigation.navigate('Messages', {
                       name: user.name,
-                      profile: user.profile
+                      profile: user.profile,
                     })} style={styles.listItem} key={user.id} avatar>
                       <Left>
                         <Thumbnail source={{ uri: user.profile }} />
                       </Left>
                       <Body>
                         <Text>{user.name}</Text>
-                        <Text note>I dunno man youll probably have some old messages or somethin</Text>
+                        <Text note>{message}</Text>
                       </Body>
                       <Right>
-                        <Text note>12:00pm</Text>
+                        <Text note></Text>
                       </Right>
                     </ListItem>
                 )})

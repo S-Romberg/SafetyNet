@@ -30,13 +30,15 @@ export default class Signup extends React.Component {
   };
 
   handleSubmit(){
-    console.log()
+    this.props.navigation.navigate('Breathe')
+    console.log(this.state.name)
   }
   render() {
+
     var landing = ''
     const { navigation } = this.props;
     const safety = navigation.getParam('safetyNet', 'undefined');
-    console.log(safety)
+
     return (
       <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.container} >

@@ -5,7 +5,7 @@ import Chatkit from "@pusher/chatkit";
 
 const CHATKIT_TOKEN_PROVIDER_ENDPOINT = "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/a8cfd717-c48c-4264-9897-cf6ad8f4251a/token";
 const CHATKIT_INSTANCE_LOCATOR = "v1:us1:a8cfd717-c48c-4264-9897-cf6ad8f4251a";
-const CHATKIT_ROOM_ID = 12365531;
+const CHATKIT_ROOM_ID = 12439876;
 const CHATKIT_USER_NAME = "Savannah";
 
 export default class Messages extends React.Component {
