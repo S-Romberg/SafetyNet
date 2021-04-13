@@ -69,7 +69,7 @@ PostgreSQL
 
 ### Created by Spencer Romberg
 
-[SpenceRomberg.co](https://spenceromberg.co/)
+[spencerromberg.com](https://spencerromberg.com)
 
 [LinkedIn](https://www.linkedin.com/in/spencer-romberg/)
 
